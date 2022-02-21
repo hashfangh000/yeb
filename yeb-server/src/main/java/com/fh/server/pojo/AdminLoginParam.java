@@ -10,7 +10,7 @@ import lombok.experimental.Accessors;
 
 /**
  * 用户登录实体类
- *  专  门封装用户登陆数据
+ *  专  门封装用户登陆数据  账号 密码
  * @author fanghao on 2022/1/12
  */
 @Data

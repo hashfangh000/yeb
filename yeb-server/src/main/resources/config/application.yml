@@ -5,9 +5,9 @@ spring:
   # 数据源配置
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://47.96.76.101:3306/yeb?useUnicode=true&characterEncoding=UTF8&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://localhost/yeb?useUnicode=true&characterEncoding=UTF8&serverTimezone=Asia/Shanghai
     username: root
-    password: Szw159421
+    password: 123456
     hikari:
       # 连接池名
       pool-name: DateHikariCP
@@ -26,44 +26,44 @@ spring:
       # 测试连接是否可用的查询语句
       connection-test-query: SELECT 1
 
-  redis:
-    # 47.96.76.101
-    timeout: 10000ms
-    host: 120.79.94.132
-    port: 6379
-    database: 0
-    lettuce:
-      pool:
-        max-active: 1024
-        max-wait: 10000ms
-        max-idle: 200
-        min-idle: 5
-  session:
-    store-type: redis
+#  redis:
+#    # 47.96.76.101
+#    timeout: 10000ms
+#    host: 120.79.94.132
+#    port: 6379
+#    database: 0
+#    lettuce:
+#      pool:
+#        max-active: 1024
+#        max-wait: 10000ms
+#        max-idle: 200
+#        min-idle: 5
+#  session:
+#    store-type: redis
 
-  rabbitmq:
-    username: root
-    password: Szw159421
-    host: 47.96.76.101
-    port: 5672
-    #消息确认回调
-    publisher-confirm-type: correlated
-    #消息失败回调
-    publisher-returns: true
+#  rabbitmq:
+#    username: root
+#    password: Szw159421
+#    host: 47.96.76.101
+#    port: 5672
+#    #消息确认回调
+#    publisher-confirm-type: correlated
+#    #消息失败回调
+#    publisher-returns: true
 
 # Mybatis-plus配置
 mybatis-plus:
   #配置Mapper映射文件
   mapper-locations: classpath*:/mapper/*Mapper.xml
   # 配置MyBatis数据返回类型别名（默认别名是类名）
-  type-aliases-package: com.awei.server.pojo
+  type-aliases-package: com.fh.server.pojo
   configuration:
     # 自动驼峰命名
     map-underscore-to-camel-case: false
 ## Mybatis SQL 打印(方法接口所在的包，不是Mapper.xml所在的包)
 logging:
   level:
-    com.awei.server.mapper: debug
+    com.fh.server.mapper: debug
 
 jwt:
   #jwt存储的请求头

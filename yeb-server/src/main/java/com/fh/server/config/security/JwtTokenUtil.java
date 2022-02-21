@@ -23,7 +23,7 @@ public class JwtTokenUtil {
     @Value("${jwt.secret}")
     private String secret; // JWT 加解密使用的密钥
     @Value("${jwt.expiration}")
-    private Long expiration; // JWT 的超期限时间 （ 60*60*24）24小时失效
+    private Long expiration; // 过期时长 单位为秒 通过配置写入 JWT 的超期限时间 （ 60*60*24）24小时失效
 
 
 
@@ -142,7 +142,7 @@ public class JwtTokenUtil {
         return Jwts.builder()
                 .setClaims(claims)                              //荷载
                 .setExpiration(generateExpiration())            //过期时间，需要类型转换(本类新建方法)
-                .signWith(SignatureAlgorithm.ES256, secret)     //设置签名 指定算法
+                .signWith(SignatureAlgorithm.HS512, secret)     //设置签名 指定算法
                 .compact();
     }
 
